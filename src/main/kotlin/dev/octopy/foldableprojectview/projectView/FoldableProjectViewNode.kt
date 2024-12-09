@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview.projectView
+package dev.octopy.foldableprojectview.projectView
 
 import com.intellij.icons.AllIcons.General.CollapseComponent
 import com.intellij.ide.projectView.PresentationData
@@ -15,9 +15,9 @@ import com.intellij.psi.PsiFileSystemItem
 import com.intellij.psi.search.PsiElementProcessor
 import com.intellij.ui.SimpleTextAttributes
 import com.intellij.ui.SimpleTextAttributes.STYLE_PLAIN
-import com.pj.foldableprojectview.psi.search.FoldableProjectSearchScope
-import com.pj.foldableprojectview.settings.FoldableProjectSettings
-import com.pj.foldableprojectview.settings.Rule
+import dev.octopy.foldableprojectview.psi.search.FoldableProjectSearchScope
+import dev.octopy.foldableprojectview.settings.FoldableProjectSettings
+import dev.octopy.foldableprojectview.settings.Rule
 
 class FoldableProjectViewNode(
     project: Project,

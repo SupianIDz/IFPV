@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview.settings
+package dev.octopy.foldableprojectview.settings
 
 import com.intellij.ide.projectView.impl.AbstractProjectTreeStructure
 import com.intellij.ide.projectView.impl.ProjectViewPane
@@ -16,10 +16,10 @@ import com.intellij.ui.dsl.builder.RightGap
 import com.intellij.ui.dsl.builder.panel
 import com.intellij.ui.layout.not
 import com.intellij.util.ui.tree.TreeUtil
-import com.pj.foldableprojectview.FoldableProjectViewBundle.message
-import com.pj.foldableprojectview.bindSelected
-import com.pj.foldableprojectview.createPredicate
-import com.pj.foldableprojectview.projectView.FoldableTreeStructureProvider
+import dev.octopy.foldableprojectview.FoldableProjectViewBundle.message
+import dev.octopy.foldableprojectview.bindSelected
+import dev.octopy.foldableprojectview.createPredicate
+import dev.octopy.foldableprojectview.projectView.FoldableTreeStructureProvider
 import java.awt.Dimension
 import javax.swing.BorderFactory.createEmptyBorder
 
@@ -30,7 +30,7 @@ class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigu
 ), NoScroll {
 
     companion object {
-        const val ID = "com.pj.foldableprojectview.options.FoldableProjectViewConfigurable"
+        const val ID = "dev.octopy.foldableprojectview.options.FoldableProjectViewConfigurable"
     }
 
     private val settings = project.service<FoldableProjectSettings>()

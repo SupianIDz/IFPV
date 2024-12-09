@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview
+package dev.octopy.foldableprojectview
 
 object FoldableProjectViewConstants {
     const val DEFAULT_RULE_NAME = "Rule name"

@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview
+package dev.octopy.foldableprojectview
 
 import com.intellij.openapi.observable.properties.ObservableMutableProperty
 import com.intellij.openapi.observable.util.bind
@@ -10,8 +10,8 @@ import com.intellij.ui.dsl.builder.Cell
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.bindText
 import com.intellij.ui.layout.ComponentPredicate
-import com.pj.foldableprojectview.settings.FoldableProjectState
-import com.pj.foldableprojectview.settings.Rule
+import dev.octopy.foldableprojectview.settings.FoldableProjectState
+import dev.octopy.foldableprojectview.settings.Rule
 import java.awt.Color
 import java.util.concurrent.atomic.AtomicBoolean
 import javax.swing.text.JTextComponent

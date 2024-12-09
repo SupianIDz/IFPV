@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview.projectView
+package dev.octopy.foldableprojectview.projectView
 
 import com.intellij.ide.projectView.ProjectView
 import com.intellij.ide.projectView.ProjectViewNode
@@ -18,9 +18,9 @@ import com.intellij.openapi.vcs.FileStatusListener
 import com.intellij.openapi.vcs.FileStatusManager
 import com.intellij.openapi.vcs.changes.ignore.cache.PatternCache
 import com.intellij.openapi.vcs.changes.ignore.lang.Syntax
-import com.pj.foldableprojectview.or
-import com.pj.foldableprojectview.settings.FoldableProjectSettings
-import com.pj.foldableprojectview.settings.FoldableProjectSettingsListener
+import dev.octopy.foldableprojectview.or
+import dev.octopy.foldableprojectview.settings.FoldableProjectSettings
+import dev.octopy.foldableprojectview.settings.FoldableProjectSettingsListener
 
 class FoldableTreeStructureProvider(private val project: Project) : TreeStructureProvider {
 

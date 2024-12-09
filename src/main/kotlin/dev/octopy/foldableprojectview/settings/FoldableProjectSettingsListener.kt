@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview.settings
+package dev.octopy.foldableprojectview.settings
 
 import com.intellij.util.messages.Topic
 import java.util.*

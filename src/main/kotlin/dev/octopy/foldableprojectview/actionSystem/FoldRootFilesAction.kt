@@ -1,10 +1,10 @@
-package com.pj.foldableprojectview.actionSystem
+package dev.octopy.foldableprojectview.actionSystem
 
 import com.intellij.ide.projectView.ProjectView
 import com.intellij.openapi.actionSystem.ToggleOptionAction
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.DumbAware
-import com.pj.foldableprojectview.settings.FoldableProjectSettings
+import dev.octopy.foldableprojectview.settings.FoldableProjectSettings
 import java.util.function.Function
 
 class FoldRootFilesAction : DumbAware, ToggleOptionAction(Function {

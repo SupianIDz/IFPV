@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>com.pj.foldableprojectview</id>
+    <id>dev.octopy.foldableprojectview</id>
     <name>Foldable Project View</name>
-    <vendor>pavankjadda</vendor>
+    <vendor>SupianIDz</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
@@ -11,18 +11,18 @@
                 key="foldableProjectView.name"
                 bundle="messages.FoldableProjectView"
                 id="FoldableProjectViewConfigurable"
-                instance="com.pj.foldableprojectview.settings.FoldableProjectViewConfigurable"/>
+                instance="dev.octopy.foldableprojectview.settings.FoldableProjectViewConfigurable"/>
 
         <searchScopesProvider
-                implementation="com.pj.foldableprojectview.psi.search.FoldableProjectScopesProvider"/>
+                implementation="dev.octopy.foldableprojectview.psi.search.FoldableProjectScopesProvider"/>
 
         <treeStructureProvider
-                implementation="com.pj.foldableprojectview.projectView.FoldableTreeStructureProvider"/>
+                implementation="dev.octopy.foldableprojectview.projectView.FoldableTreeStructureProvider"/>
     </extensions>
 
     <actions>
         <action id="ProjectView.FoldRootFiles"
-                class="com.pj.foldableprojectview.actionSystem.FoldRootFilesAction"
+                class="dev.octopy.foldableprojectview.actionSystem.FoldRootFilesAction"
                 text="Fold Root Files"
                 description="Action that lets you fold the files located in the root of your project">
             <add-to-group
@@ -31,7 +31,7 @@
                     anchor="before"/>
         </action>
         <action id="ProjectView.FoldIgnoredFiles"
-                class="com.pj.foldableprojectview.actionSystem.FoldIgnoredFilesAction"
+                class="dev.octopy.foldableprojectview.actionSystem.FoldIgnoredFilesAction"
                 text="Fold Ignored Files"
                 description="Action that lets you fold the ignored files">
             <add-to-group

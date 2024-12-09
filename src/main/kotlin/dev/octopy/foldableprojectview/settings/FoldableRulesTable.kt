@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview.settings
+package dev.octopy.foldableprojectview.settings
 
 import com.intellij.execution.util.ListTableWithButtons
 import com.intellij.openapi.actionSystem.ActionToolbarPosition
@@ -8,8 +8,8 @@ import com.intellij.ui.ToolbarDecorator
 import com.intellij.util.ui.ColumnInfo
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.ListTableModel
-import com.pj.foldableprojectview.FoldableProjectViewBundle.message
-import com.pj.foldableprojectview.FoldableProjectViewConstants.COLOR_COLUMN_TEXT
+import dev.octopy.foldableprojectview.FoldableProjectViewBundle.message
+import dev.octopy.foldableprojectview.FoldableProjectViewConstants.COLOR_COLUMN_TEXT
 import java.awt.Component
 import javax.swing.JTable
 import javax.swing.ListSelectionModel

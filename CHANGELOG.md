@@ -6,10 +6,10 @@
 
 This is an EAP release.
 Please report any issues or ideas
-via [GitHub Issues](https://github.com/pavankjadda/intellij-foldable-project-view/issues).
+via [GitHub Issues](https://github.com/SupianIDz/intellij-foldable-project-view/issues).
 
 Thanks!
-@pavankjadda
+@SupianIDz
 
 ### Added
 

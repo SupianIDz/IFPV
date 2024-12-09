@@ -1,4 +1,4 @@
-package com.pj.foldableprojectview
+package dev.octopy.foldableprojectview
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls
