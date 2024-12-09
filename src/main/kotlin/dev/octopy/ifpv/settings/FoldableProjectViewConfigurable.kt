@@ -1,4 +1,4 @@
-package dev.octopy.foldableprojectview.settings
+package dev.octopy.ifpv.settings
 
 import com.intellij.ide.projectView.impl.AbstractProjectTreeStructure
 import com.intellij.ide.projectView.impl.ProjectViewPane
@@ -16,21 +16,21 @@ import com.intellij.ui.dsl.builder.RightGap
 import com.intellij.ui.dsl.builder.panel
 import com.intellij.ui.layout.not
 import com.intellij.util.ui.tree.TreeUtil
-import dev.octopy.foldableprojectview.FoldableProjectViewBundle.message
-import dev.octopy.foldableprojectview.bindSelected
-import dev.octopy.foldableprojectview.createPredicate
-import dev.octopy.foldableprojectview.projectView.FoldableTreeStructureProvider
+import dev.octopy.ifpv.ifpvBundle.message
+import dev.octopy.ifpv.bindSelected
+import dev.octopy.ifpv.createPredicate
+import dev.octopy.ifpv.projectView.FoldableTreeStructureProvider
 import java.awt.Dimension
 import javax.swing.BorderFactory.createEmptyBorder
 
-class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigurable(
-    helpTopic = "FoldableProjectView",
-    _id = "FoldableProjectView",
-    displayName = "FoldableProjectView",
+class ifpvConfigurable(project: Project) : BoundSearchableConfigurable(
+    helpTopic = "ifpv",
+    _id = "ifpv",
+    displayName = "ifpv",
 ), NoScroll {
 
     companion object {
-        const val ID = "dev.octopy.foldableprojectview.options.FoldableProjectViewConfigurable"
+        const val ID = "dev.octopy.ifpv.options.ifpvConfigurable"
     }
 
     private val settings = project.service<FoldableProjectSettings>()
@@ -57,35 +57,35 @@ class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigu
 
     private val settingsPanel = panel {
         row {
-            checkBox(message("foldableProjectView.settings.foldingEnabled"))
+            checkBox(message("ifpv.settings.foldingEnabled"))
                 .bindSelected(settingsProperty, FoldableProjectSettings::foldingEnabled)
-                .comment(message("foldableProjectView.settings.foldingEnabled.comment"), MAX_LINE_LENGTH_WORD_WRAP)
+                .comment(message("ifpv.settings.foldingEnabled.comment"), MAX_LINE_LENGTH_WORD_WRAP)
                 .applyToComponent { setMnemonic('e') }
         }
 
         rowsRange {
             row {
-                checkBox(message("foldableProjectView.settings.caseSensitive"))
+                checkBox(message("ifpv.settings.caseSensitive"))
                     .bindSelected(settingsProperty, FoldableProjectSettings::caseSensitive)
-                    .comment(message("foldableProjectView.settings.caseSensitive.comment"), MAX_LINE_LENGTH_WORD_WRAP)
+                    .comment(message("ifpv.settings.caseSensitive.comment"), MAX_LINE_LENGTH_WORD_WRAP)
                     .applyToComponent { setMnemonic('c') }
             }
 
             row {
-                checkBox(message("foldableProjectView.settings.matchDirectories"))
+                checkBox(message("ifpv.settings.matchDirectories"))
                     .bindSelected(settingsProperty, FoldableProjectSettings::matchDirectories)
                     .comment(
-                        message("foldableProjectView.settings.matchDirectories.comment"),
+                        message("ifpv.settings.matchDirectories.comment"),
                         MAX_LINE_LENGTH_WORD_WRAP
                     )
                     .applyToComponent { setMnemonic('d') }
             }
 
             row {
-                checkBox(message("foldableProjectView.settings.foldIgnoredFiles"))
+                checkBox(message("ifpv.settings.foldIgnoredFiles"))
                     .bindSelected(settingsProperty, FoldableProjectSettings::foldIgnoredFiles)
                     .comment(
-                        message("foldableProjectView.settings.foldIgnoredFiles.comment"),
+                        message("ifpv.settings.foldIgnoredFiles.comment"),
                         MAX_LINE_LENGTH_WORD_WRAP
                     )
                     .applyToComponent { setMnemonic('h') }
@@ -94,16 +94,16 @@ class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigu
             }
 
             row {
-                checkBox(message("foldableProjectView.settings.hideAllGroups"))
+                checkBox(message("ifpv.settings.hideAllGroups"))
                     .bindSelected(settingsProperty, FoldableProjectSettings::hideAllGroups)
-                    .comment(message("foldableProjectView.settings.hideAllGroups.comment"), MAX_LINE_LENGTH_WORD_WRAP)
+                    .comment(message("ifpv.settings.hideAllGroups.comment"), MAX_LINE_LENGTH_WORD_WRAP)
                     .gap(RightGap.SMALL)
                     .applyToComponent { setMnemonic('i') }
 
                 ContextHelpLabel
                     .create(
-                        message("foldableProjectView.settings.hideAllGroups.help"),
-                        message("foldableProjectView.settings.hideAllGroups.help.description"),
+                        message("ifpv.settings.hideAllGroups.help"),
+                        message("ifpv.settings.hideAllGroups.help.description"),
                     )
                     .let(::cell)
 
@@ -111,9 +111,9 @@ class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigu
             }
 
             row {
-                checkBox(message("foldableProjectView.settings.hideEmptyGroups"))
+                checkBox(message("ifpv.settings.hideEmptyGroups"))
                     .bindSelected(settingsProperty, FoldableProjectSettings::hideEmptyGroups)
-                    .comment(message("foldableProjectView.settings.hideEmptyGroups.comment"), MAX_LINE_LENGTH_WORD_WRAP)
+                    .comment(message("ifpv.settings.hideEmptyGroups.comment"), MAX_LINE_LENGTH_WORD_WRAP)
                     .applyToComponent { setMnemonic('h') }
                     .enabledIf(hideAllGroupsPredicate.not())
 
@@ -157,7 +157,7 @@ class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigu
                 cell(splitter)
                     .align(Align.FILL)
             }
-            group(message("foldableProjectView.settings.foldingRules")) {
+            group(message("ifpv.settings.foldingRules")) {
                 row {
                     cell(rulesTable.component)
                         .align(Align.FILL)
@@ -177,7 +177,7 @@ class FoldableProjectViewConfigurable(project: Project) : BoundSearchableConfigu
 
     override fun getId() = ID
 
-    override fun getDisplayName() = message("foldableProjectView.name")
+    override fun getDisplayName() = message("ifpv.name")
 
     override fun isModified() = settingsProperty.get() != settings
 

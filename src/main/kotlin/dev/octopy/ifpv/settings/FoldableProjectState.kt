@@ -1,10 +1,10 @@
-package dev.octopy.foldableprojectview.settings
+package dev.octopy.ifpv.settings
 
 import com.intellij.ui.JBColor
 import com.intellij.util.xmlb.Converter
 import com.intellij.util.xmlb.annotations.OptionTag
-import dev.octopy.foldableprojectview.FoldableProjectViewConstants.DEFAULT_RULE_NAME
-import dev.octopy.foldableprojectview.FoldableProjectViewConstants.DEFAULT_RULE_PATTERN
+import dev.octopy.ifpv.ifpvConstants.DEFAULT_RULE_NAME
+import dev.octopy.ifpv.ifpvConstants.DEFAULT_RULE_PATTERN
 import java.awt.Color
 
 interface FoldableProjectState {

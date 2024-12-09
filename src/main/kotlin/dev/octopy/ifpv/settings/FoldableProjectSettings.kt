@@ -1,13 +1,13 @@
-package dev.octopy.foldableprojectview.settings
+package dev.octopy.ifpv.settings
 
 import com.intellij.openapi.components.*
 import com.intellij.openapi.project.Project
 import com.intellij.util.xmlb.annotations.OptionTag
-import dev.octopy.foldableprojectview.FoldableProjectViewConstants
+import dev.octopy.ifpv.ifpvConstants
 import java.io.File
 
 @Service(Service.Level.PROJECT)
-@State(name = "FoldableProjectSettings", storages = [Storage(FoldableProjectViewConstants.STORAGE_FILE)])
+@State(name = "FoldableProjectSettings", storages = [Storage(ifpvConstants.STORAGE_FILE)])
 class FoldableProjectSettings : FoldableProjectState, BaseState(), PersistentStateComponent<FoldableProjectSettings> {
     @get:OptionTag("FOLDING_ENABLED")
     override var foldingEnabled by property(true)

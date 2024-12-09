@@ -1,4 +1,4 @@
-package dev.octopy.foldableprojectview.projectView
+package dev.octopy.ifpv.projectView
 
 import com.intellij.icons.AllIcons.General.CollapseComponent
 import com.intellij.ide.projectView.PresentationData
@@ -15,11 +15,11 @@ import com.intellij.psi.PsiFileSystemItem
 import com.intellij.psi.search.PsiElementProcessor
 import com.intellij.ui.SimpleTextAttributes
 import com.intellij.ui.SimpleTextAttributes.STYLE_PLAIN
-import dev.octopy.foldableprojectview.psi.search.FoldableProjectSearchScope
-import dev.octopy.foldableprojectview.settings.FoldableProjectSettings
-import dev.octopy.foldableprojectview.settings.Rule
+import dev.octopy.ifpv.psi.search.FoldableProjectSearchScope
+import dev.octopy.ifpv.settings.FoldableProjectSettings
+import dev.octopy.ifpv.settings.Rule
 
-class FoldableProjectViewNode(
+class ifpvNode(
     project: Project,
     private val viewSettings: ViewSettings?,
     private val settings: FoldableProjectSettings,
@@ -80,8 +80,8 @@ class FoldableProjectViewNode(
     private fun PsiFileSystemItem.matches(): Boolean {
         // check userdata
         if (isDirectory && !settings.matchDirectories) {
-            return !processChildren(this@FoldableProjectViewNode)
+            return !processChildren(this@ifpvNode)
         }
-        return ruleScope.contains(virtualFile) || !processChildren(this@FoldableProjectViewNode) // processChildren returns false if {#execute} found matched child
+        return ruleScope.contains(virtualFile) || !processChildren(this@ifpvNode) // processChildren returns false if {#execute} found matched child
     }
 }

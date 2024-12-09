@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>dev.octopy.foldableprojectview</id>
+    <id>dev.octopy.ifpv</id>
     <name>Foldable Project View</name>
     <vendor>SupianIDz</vendor>
 
@@ -8,30 +8,21 @@
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable
                 groupId="tools"
-                key="foldableProjectView.name"
-                bundle="messages.FoldableProjectView"
-                id="FoldableProjectViewConfigurable"
-                instance="dev.octopy.foldableprojectview.settings.FoldableProjectViewConfigurable"/>
+                key="ifpv.name"
+                bundle="messages.ifpv"
+                id="ifpvConfigurable"
+                instance="dev.octopy.ifpv.settings.ifpvConfigurable"/>
 
         <searchScopesProvider
-                implementation="dev.octopy.foldableprojectview.psi.search.FoldableProjectScopesProvider"/>
+                implementation="dev.octopy.ifpv.psi.search.FoldableProjectScopesProvider"/>
 
         <treeStructureProvider
-                implementation="dev.octopy.foldableprojectview.projectView.FoldableTreeStructureProvider"/>
+                implementation="dev.octopy.ifpv.projectView.FoldableTreeStructureProvider"/>
     </extensions>
 
     <actions>
-        <action id="ProjectView.FoldRootFiles"
-                class="dev.octopy.foldableprojectview.actionSystem.FoldRootFilesAction"
-                text="Fold Root Files"
-                description="Action that lets you fold the files located in the root of your project">
-            <add-to-group
-                    group-id="ProjectView.ToolWindow.SecondaryActions"
-                    relative-to-action="ProjectView.FoldIgnoredFiles"
-                    anchor="before"/>
-        </action>
         <action id="ProjectView.FoldIgnoredFiles"
-                class="dev.octopy.foldableprojectview.actionSystem.FoldIgnoredFilesAction"
+                class="dev.octopy.ifpv.actionSystem.FoldIgnoredFilesAction"
                 text="Fold Ignored Files"
                 description="Action that lets you fold the ignored files">
             <add-to-group

@@ -1,14 +1,14 @@
-package dev.octopy.foldableprojectview
+package dev.octopy.ifpv
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls
 import org.jetbrains.annotations.PropertyKey
 
 @NonNls
-object FoldableProjectViewBundle : AbstractBundle("messages.FoldableProjectView") {
+object ifpvBundle : AbstractBundle("messages.ifpv") {
 
     @NonNls
-    const val BUNDLE = "messages.FoldableProjectView"
+    const val BUNDLE = "messages.ifpv"
 
     @Suppress("SpreadOperator")
     @JvmStatic

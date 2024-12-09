@@ -1,10 +1,10 @@
-package dev.octopy.foldableprojectview.actionSystem
+package dev.octopy.ifpv.actionSystem
 
 import com.intellij.ide.projectView.ProjectView
 import com.intellij.openapi.actionSystem.ToggleOptionAction
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.DumbAware
-import dev.octopy.foldableprojectview.settings.FoldableProjectSettings
+import dev.octopy.ifpv.settings.FoldableProjectSettings
 import java.util.function.Function
 
 class FoldIgnoredFilesAction : DumbAware, ToggleOptionAction(Function {

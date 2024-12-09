@@ -18,7 +18,7 @@ Thanks!
 
 ### Changed
 
-- Use a separated storage file within the `.idea` directory: `FoldableProjectView.xml`
+- Use a separated storage file within the `.idea` directory: `ifpv.xml`
 
 ## [1.1.4] - 2022-11-13
 

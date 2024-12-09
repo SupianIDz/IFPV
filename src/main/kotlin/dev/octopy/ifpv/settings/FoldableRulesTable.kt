@@ -1,4 +1,4 @@
-package dev.octopy.foldableprojectview.settings
+package dev.octopy.ifpv.settings
 
 import com.intellij.execution.util.ListTableWithButtons
 import com.intellij.openapi.actionSystem.ActionToolbarPosition
@@ -8,8 +8,8 @@ import com.intellij.ui.ToolbarDecorator
 import com.intellij.util.ui.ColumnInfo
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.ListTableModel
-import dev.octopy.foldableprojectview.FoldableProjectViewBundle.message
-import dev.octopy.foldableprojectview.FoldableProjectViewConstants.COLOR_COLUMN_TEXT
+import dev.octopy.ifpv.ifpvBundle.message
+import dev.octopy.ifpv.ifpvConstants.COLOR_COLUMN_TEXT
 import java.awt.Component
 import javax.swing.JTable
 import javax.swing.ListSelectionModel
@@ -77,7 +77,7 @@ class FoldableRulesTable(private val settingsProperty: ObservableMutableProperty
 
     override fun isEmpty(element: Rule) = element.pattern.isBlank()
 
-    private class ColorsColumn : ColumnInfo<Rule, String>(message("foldableProjectView.settings.color")) {
+    private class ColorsColumn : ColumnInfo<Rule, String>(message("ifpv.settings.color")) {
 
         override fun getName() = ""
 
@@ -110,12 +110,12 @@ class FoldableRulesTable(private val settingsProperty: ObservableMutableProperty
         }
     }
 
-    private class NameColumn : ColumnInfo<Rule, String>(message("foldableProjectView.settings.name")) {
+    private class NameColumn : ColumnInfo<Rule, String>(message("ifpv.settings.name")) {
 
         override fun valueOf(item: Rule?) = item?.name
     }
 
-    private class RulesColumn : ColumnInfo<Rule, String>(message("foldableProjectView.settings.rules")) {
+    private class RulesColumn : ColumnInfo<Rule, String>(message("ifpv.settings.rules")) {
 
         override fun valueOf(item: Rule?) = item?.pattern
     }

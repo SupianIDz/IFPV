@@ -1,4 +1,4 @@
-package dev.octopy.foldableprojectview.projectView
+package dev.octopy.ifpv.projectView
 
 import com.intellij.ide.projectView.ProjectView
 import com.intellij.ide.projectView.ProjectViewNode
@@ -18,9 +18,9 @@ import com.intellij.openapi.vcs.FileStatusListener
 import com.intellij.openapi.vcs.FileStatusManager
 import com.intellij.openapi.vcs.changes.ignore.cache.PatternCache
 import com.intellij.openapi.vcs.changes.ignore.lang.Syntax
-import dev.octopy.foldableprojectview.or
-import dev.octopy.foldableprojectview.settings.FoldableProjectSettings
-import dev.octopy.foldableprojectview.settings.FoldableProjectSettingsListener
+import dev.octopy.ifpv.or
+import dev.octopy.ifpv.settings.FoldableProjectSettings
+import dev.octopy.ifpv.settings.FoldableProjectSettingsListener
 
 class FoldableTreeStructureProvider(private val project: Project) : TreeStructureProvider {
 
@@ -53,19 +53,10 @@ class FoldableTreeStructureProvider(private val project: Project) : TreeStructur
         viewSettings: ViewSettings?,
     ): Collection<AbstractTreeNode<*>> {
         val project = parent.project ?: return children
-        val foldingGroup = parent.foldingFolder
 
         return when {
             // Folding is disabled
             !state.foldingEnabled -> children
-
-//            foldingGroup != null -> {
-//                val parentPath = (foldingGroup.parent as PsiDirectoryNode).virtualFile?.toNioPath()
-//
-//                children.filter {
-//                    true
-//                }
-//            }
 
             // Parent is not a directory node
             parent !is PsiDirectoryNode -> children
@@ -84,7 +75,7 @@ class FoldableTreeStructureProvider(private val project: Project) : TreeStructur
                         .takeUnless { state.hideAllGroups || (state.hideEmptyGroups && matched.isEmpty()) }
                         ?.run {
                             matched.addAll(this)
-                            FoldableProjectViewNode(project, viewSettings, state, rule, parent)
+                            ifpvNode(project, viewSettings, state, rule, parent)
                         }
                 }
 
@@ -140,8 +131,8 @@ class FoldableTreeStructureProvider(private val project: Project) : TreeStructur
         ?.updateFromRoot(true)
 
     private val <T> AbstractTreeNode<T>.isFolded: Boolean
-        get() = parent?.run { this is FoldableProjectViewNode || isFolded } ?: false
+        get() = parent?.run { this is ifpvNode || isFolded } ?: false
 
     private val <T> AbstractTreeNode<T>.foldingFolder: AbstractTreeNode<*>?
-        get() = parent.takeIf { it is FoldableProjectViewNode } ?: parent?.foldingFolder
+        get() = parent.takeIf { it is ifpvNode } ?: parent?.foldingFolder
 }
